@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Group App"/>
+    <HelloWorld msg="Welcome to Online Resume App"/>
   </div>
 </template>
 
