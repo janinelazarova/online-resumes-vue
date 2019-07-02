@@ -48,8 +48,7 @@ export default {
   data: function() {
     return {
       photos: [],
-      currentPhoto: {},
-      
+      currentPhoto: {},   
     };
   },
   created: function() {
