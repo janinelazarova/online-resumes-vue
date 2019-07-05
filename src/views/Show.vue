@@ -1,43 +1,33 @@
 <template>
-
 <div class ="show">
-  <h1> First Name </h1>
-  <h1> Last Name </h1>
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQBgZsX5yrGZAbwdWcJAyQ8Z4UIx0-QVMNZe6TvOrrkPci-3N_Uw87N9o">
+
+  
+  <!-- Student Info  -->
+  <div id="student-attributes">
+    
+  </div>
+
+  <!-- Each div will pull data from each element of the array associated -->
+
+  <!-- Capstones -->
+  <div v-for="capstone in student.capstones">
+    
+  </div>
+  <!-- Skills -->
+  <div v-for="skill in student.skills">
+    
+  </div>
+  <!-- Experiences -->
+  <div v-for="experience in student.experiences">
+    
+  </div>
+  <!-- Educations -->
+  <div v-for="education in student.educations">
+    
+  </div>
+
+
 </div>
-
-<!-- Email
-Phone Number
-Short Bio
-LinkedIn URL
-Twitter Handle
-Personal Blog/Website URL
-Online Resume URL
-Github URL -->
-
-
-
-<!-- Experience
-Start Date
-End Date
-Job Title
-Company Name
-Details (one long text field)
-Education
-Start Date
-End Date
-Degree
-University Name
-Details (one long text field)
-Skill
-Skill Name (E.g. Ruby, HTML, CSS)
-Capstone
-Name
-Description
-URL
-Screenshot (Optional)
- -->
-
 </template>
 
 <script>
@@ -47,24 +37,17 @@ import axios from "axios";
 export default {
   data: function() {
     return {
-      photos: [],
-      currentPhoto: {},   
+      student: {}    
     };
   },
   created: function() {
-    axios.get("/api/photos").then(response => {
-      this.photos = response.data;
+    axios.get("/api/students/" + this.$route.params.id).then(response => {
+      this.student = response.data;
+      console.log(this.student);
     });
   },
   methods: {
-    
-    showPhoto: function(photo) {
-      if (this.currentPhoto === photo) {
-        this.currentPhoto = {};
-      } else {
-        this.currentPhoto = photo;
-      }
-    }
+
   }
 };
 // </script>
