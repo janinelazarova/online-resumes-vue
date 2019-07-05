@@ -1,62 +1,157 @@
 <template>
 
 <div class ="resume-show">
+
   <div>
-    <h6> Profile of: {{ student.first_name }} {{ student.last_name }} </h6>
+    <div>
+      <br>
+      <h6> Profile of: </h6>
+      <h1> {{ student.first_name }} {{ student.last_name }} </h1>
+    </div>
+
     <div>
       <img v-bind:src="student.photo">
-    </div><br>
+    </div>
+  </div>
+  <br>
+  <br>
 
-    <h1> {{ student.first_name }} {{ student.last_name }} </h1>
-    <h4> Email: {{ student.email }}</h4>
-    <h4>  Phone Number: {{ student.phone_number }}</h4>
-    <br>
-    <p>  Short Bio: {{ student.bio }}</p>
-    <br>
-    <h4>  LinkedIn URL: {{ student.linked_in }} </h4>
-    <h4>  Twitter Handle: {{ student.twitter }} </h4>
-    <h4>  Personal Blog/Website URL: {{ student.website }} </h4>
-    <h4>   Online Resume URL: {{ student.resume }} </h4>  
-    <h4>  Github URL: {{ student.github }} </h4>  
+
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col">
+        <small>First Name:</small> 
+        <h4 {{ student.first_name }}</h4> 
+      </div>
+      <div class="col">
+        <small>Last Name:</small> 
+         <h4>{{ student.last_name }}</h4>
+      </div>
+      <div class="col">
+        <small>Email:</small> 
+        <h4>{{ student.email }}</h4>
+      </div>
+      <div class="col">
+        <small>Phone Number:</small> 
+        <h4>{{ student.phone_number }}</h4>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+
+  <div>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col">
+        <h4>Short Bio:</h4>
+      
+        <h5> {{ student.bio }} </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+
+<div class="container">
+    <div class="row align-items-center">
+      <div class="col">
+        <small>LinkedIn URL:</small> 
+        <br>
+        <h6> {{ student.linked_in }} </h6>
+      </div>
+      
+      <div class="col">
+        <small>Twitter Handle:</small> 
+        <br>
+       <h6> {{ student.twitter }} </h6>
+      </div>
+      </div>
   </div>
   <br>
 
-  <div id="student.capstone">
-    <h1>Capstone</h1>
-    <h5> Name: {{ student.capstone.name  }}</h5>
-    <h5> Description: {{ student.capstone.description }} </h5>
-    <h5>  URL: {{ student.capstone.url }}  </h5>
-    <h5> Screenshot: </h5>
-    <p>(Optional)</p>
+<div class="container">
+    <div class="row align-items-center">
+    
+        <div class="col">
+          <small>Personal Blog/Website URL:</small>
+          <br> 
+         <h6> {{ student.website }} </h6>
+        </div>
+        <div class="col">
+          <small>Online Resume URL:</small>
+          <br> 
+         <h6> {{ student.resume }} </h6>
+        </div>
+        <div class="col">
+          <small>Github URL:</small> 
+          <br>
+         <h6> {{ student.github }} </h6>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+
+<div class="container">
+    <div class="row align-items-start">
+  <div class="col" id="student.capstone">
+    <h3> Capstone</h3>
+    <small>Name:</small> 
+    <h5> {{ student.capstone.name  }} </h5>
+    Description:
+     <h5> {{ student.capstone.description }} </h5>
+    URL:
+     <h5> {{ student.capstone.url }} </h5> 
+    <small> Screenshot:  (Optional)</small>
+    <br>
     <img v-bind:src="student.capstone.screenshot">
   </div>
+
+  <div class="col" id="student.education">
+    <h3>Education</h3>
+    <small> Start Date: </small>
+    <h5> {{ student.education.start_date  }} </h5>
+    <small> End Date: </small>
+    <h5> {{ student.education.end_date }} </h5>
+    <small> Degree: </small>
+    <h5> {{ student.education.degree }} </h5>
+    <small> University Name: </small>
+    <h5> {{ student.education.university }} </h5>
+    <small> Details: </small>
+    <h5> {{ student.education.details }} </h5>
+  </div>
+
+  <div class="col" id="student.experience">
+    <h3>Experiance</h3>
+    <small> Start Date: </small>
+    <h5> {{ student.experience.start_date  }} </h5>
+    <small> End Date: </small>
+    <h5> {{ student.experience.end_date }} </h5>
+    <small> Title: </small>
+    <h5> {{ student.experience.title }} </h5>
+    <small> Company Name: </small>
+    <h5> {{ student.experience.company_name }} </h5>
+    <small> Details: </small> 
+    <h5> {{ student.experience.details }} </h5>
+  </div>
+
+  <div class="col" id="student.skills">
+    <h3>Skills</h3>
+    <small> Name: </small>
+    <h5> {{ student.skills.name  }} </h5>
+  </div>
+
+  </div>
+</div>
   <br>
 
-  <div id="student.education">
-    <h1>Education</h1>
-    <h5> Start Date: {{ student.education.start_date  }} </h5>
-    <h5> End Date: {{ student.education.end_date }} </h5>
-    <h5> Degree: {{ student.education.degree }} </h5>
-    <h5> University Name: {{ student.education.university }} </h5>
-    <h5> Details: {{ student.education.details }} </h5>
-  </div>
-  <br>
+  
 
-  <div id="student.experience">
-    <h1>Experiance</h1>
-    <h5> Start Date: {{ student.experiance.start_date  }} </h5>
-    <h5> End Date: {{ student.experiance.end_date }} </h5>
-    <h5> Title: {{ student.experiance.title }} </h5>
-    <h5> Company Name: {{ student.experiance.company_name }} </h5>
-    <h5> Details: {{ student.experiance.details }} </h5>
-  </div>
-  <br>
-
-  <div id="student.skills">
-    <h1>Skills</h1>
-    <h5> Name: {{ student.skills.name  }} </h5>
-  </div>
-  <br>
+  
 
 </div>
 
@@ -84,6 +179,7 @@ export default {
         resume: "no resume to display now",
         github: "https://github.com/IsraelChicago",
         photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQBgZsX5yrGZAbwdWcJAyQ8Z4UIx0-QVMNZe6TvOrrkPci-3N_Uw87N9o",
+        
         capstone: {
           name: "Bit-Please",
           description: "Actualize coding bootcamp",
@@ -91,15 +187,12 @@ export default {
           screenshot: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjKjJ51adXD7gTLh2VUV1Dqow5-5QJi4rGJPLK59aYmkrNgjytQCiPPsfG"
           
           // student_id
-        },
-        education: {
-          start_date: "July 19, 2018",
-          end_date: "July 19, 2019",
-          degree: "Computer Engeneering",
-          university: "Actualize",
-          details: "Coding details"
-          // student_id
-        },
+          },
+        
+        
+        skills: {
+          name: "Teaching"
+          },
         experiance: {
           start_date: "Sept 1, 2008",
           end_date: "Sept 1, 2015",
@@ -107,10 +200,15 @@ export default {
           company_name: "Veitzner",
           details: "4th grade Hebrew studies Rebbe"
           // student_id
-        },
-        skills: {
-          name: "Teaching"
-        }
+          },
+        education: {
+          start_date: "July 19, 2018",
+          end_date: "July 19, 2019",
+          degree: "Computer Engeneering",
+          university: "Actualize",
+          details: "Coding details"
+          // student_id
+          }
 
 
 
